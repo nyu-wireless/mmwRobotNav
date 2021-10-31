@@ -147,7 +147,7 @@ strongest path’s AoA from channel sounding and the AoA of the
 strongest path in real ray tracing data set.</em>
 </p>
 
-## Wireless-Assisted Robotic Navigation Integration With NEURAL-SLAM
+## Wireless-Assisted Robotic Navigation Integration with Neural SLAM
 Of course, the link state and the path estimate are not
 known a priori by the mobile agent. We thus propose to
 use the link state classification along with the estimated SNR
