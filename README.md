@@ -53,6 +53,56 @@ The work is partly based on
 
 * Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint arXiv:2110.14789.
 
+## Path Estimation
+Detailed antenna and multiple array modeling: Practical
+mmWave devices at the terminal (UE) and base station
+(gNB) often use multiple arrays oriented in different
+directions to obtain 360 degree coverage.
+This work models these multiple array structures and
+also includes detailed models of the antenna element
+directivity in each array. In addition, we do not consider
+any local oscillator (LO) synchronization across different
+arrays.
+
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/ant_array_pattern.png" width="400">
+  
+  <em>Fig. 2: The pattern of one gNB antenna array and one UE antenna
+array. (The array is aligned so that its bore-sight is on the x-axis.)</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/array_coverage-gain.jpg" width="300">
+  
+  <em>Fig. 3: Array gain including the element gain from each gNB array
+as well as the best for all three arrays. We see that by using multiple
+arrays we can obtain full azimuth coverage.</em>
+</p>
+
+Beam sweeping double directional estimation: Many
+prior mmWave localization studies have either abstracted
+the directional estimation, considered single-sided
+directional estimates, or considered double
+directional estimates using MIMO signaling. In
+this work, we modify the low-rank tensor decomposition
+algorithms in [paper](https://ieeexplore.ieee.org/document/8647176) and 
+[paper](https://ieeexplore.ieee.org/document/7914672)
+to account for both sweeping of
+the TX beams and use of multiple arrays at the TX and
+RX. Beam sweeping at the transmitter is critical to model
+for most cellular mmWave systems.
+
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/h_peak.png" width="400">
+  
+  <em>Fig. 4:Example received power spectrum along TX-RX direction
+pair along with the location of the actual ray tracing paths of a LOS
+link and a NLOS link. The black squares indicate the result of path
+estimation by the low-rank tensor decomposition.</em>
+</p>
+
+
+
 ## Link State Classification
 As shown in
 Fig. 2, we will classify the link as being in one of four states
