@@ -70,6 +70,23 @@ minimum threshold.
   <em>Fig. 2: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
 </p>
 
+Multi-class link classification: Instead of simply classifying
+the link as LOS or NLOS, we differentiate between
+four states: LOS, NLOS from a single interaction, higherorder
+NLOS and outage. We show that for target localization
+application, both LOS and first-order NLOS paths
+have angles of arrival that strongly correlate with good
+navigation directions.
+
+
+The reason we are interested in this
+problem is that the angle of arrival of LOS and first-order
+NLOS path have strong correlation with the optimal direction
+for navigation. Hence, if can reliably detect the link state and
+estimate the angle of arrival of the strongest path, we can
+build a navigation system that simply follows the estimated
+strongest path angle of arrival.
+
 
 ## Indoor MmWave Robotic Data Sets
 We provide the first complete 5G wireless localization
