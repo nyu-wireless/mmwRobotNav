@@ -94,7 +94,7 @@ for most cellular mmWave systems.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/beam_sweep.jpg" width="400">
   
-  <em>Fig. 4:Example TX beam sweeping with Ntx_arr = 3 arrays and
+  <em>Fig. 4: Example TX beam sweeping with Ntx_arr = 3 arrays and
 4 directions per array for a total of Ntx_dir = 12 beam directions.
 The synchronization signals are sent once in each direction with the
 pattern repeating every Tsweep seconds.</em>
@@ -103,7 +103,7 @@ pattern repeating every Tsweep seconds.</em>
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/h_peak.png" width="400">
   
-  <em>Fig. 5:Example received power spectrum along TX-RX direction
+  <em>Fig. 5: Example received power spectrum along TX-RX direction
 pair along with the location of the actual ray tracing paths of a LOS
 link and a NLOS link. The black squares indicate the result of path
 estimation by the low-rank tensor decomposition.</em>
