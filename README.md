@@ -33,7 +33,7 @@ case, the link state predictor also determines if the strongest
 path arrived via one or more reflections, as shown in Fig. 2. 
 * Third, based on the
 link state, the agent either follows the estimated angles or
-explores the environment. 
+explores the environment.
 
 The method is demonstrated on a
 [large dataset of indoor environments](http://gibsonenv.stanford.edu/database/) 
@@ -52,6 +52,24 @@ to a baseline that knows the target location.
 The work is partly based on
 
 * Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint arXiv:2110.14789.
+
+## Link State Classification
+As shown in
+Fig. 2, we will classify the link as being in one of four states
+on the basis of the strongest received path:
+* <em>LOS</em>: The strongest received path is above the minimum threshold and is LOS;
+* <em>First-order NLOS</em>: The strongest received path is above
+the minimum threshold and is NLOS with one interaction;
+* <em>Higher-order NLOS</em>: All sufficiently strong paths from
+the TX to RX are NLOS with two or more interactions.
+* <em>Outage</em>: There are no sufficiently strong paths above the
+minimum threshold.
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/Link-states.png" width="300" height="270">
+  
+  <em>Fig. 2: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
+</p>
+
 
 ## Indoor MmWave Robotic Data Sets
 We provide the first complete 5G wireless localization
