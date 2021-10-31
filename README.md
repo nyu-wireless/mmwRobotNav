@@ -224,7 +224,7 @@ dataset combined with camera data and robotic
 simulation environment.
 This millimeter wave indoor wireless data can be combined with the [Habitat-Sim](https://github.com/facebookresearch/habitat-sim) robot simulator.
 Regarding wireless, there are two data sets:
-* Indoor 28GHz ray tracing
+* [Indoor 28GHz ray tracing](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_ray_tracing)
 * MmWave MIMO channel modeling
 
 Supporting data sets:
