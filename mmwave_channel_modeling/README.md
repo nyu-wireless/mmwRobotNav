@@ -16,7 +16,7 @@ each array when directed at boresight are shown in Fig. 1.
 array. (The array is aligned so that its bore-sight is on the x-axis.)</em>
 </p>
 
-we create the multiple antenna arrays at both
+We create the multiple antenna arrays at both
 the gNB and UE. Specifically, we assume three arrays with
 azimuth angles 0°, 120°, and -120° and 0° elevation. The
 multi-sector layout provides 360° coverage. For example,
