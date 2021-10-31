@@ -51,7 +51,7 @@ to a baseline that knows the target location.
 
 The work is partly based on
 
-* Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint arXiv:2110.14789.
+* Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint [arXiv:2110.14789](https://arxiv.org/abs/2110.14789).
 
 ## Path Estimation
 Detailed antenna and multiple array modeling: Practical
