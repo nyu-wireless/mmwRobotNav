@@ -91,11 +91,19 @@ to account for both sweeping of
 the TX beams and use of multiple arrays at the TX and
 RX. Beam sweeping at the transmitter is critical to model
 for most cellular mmWave systems.
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/beam_sweep.jpg" width="400">
+  
+  <em>Fig. 4:Example TX beam sweeping with Ntx_arr = 3 arrays and
+4 directions per array for a total of Ntx_dir = 12 beam directions.
+The synchronization signals are sent once in each direction with the
+pattern repeating every Tsweep seconds.</em>
+</p>
 
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/h_peak.png" width="400">
   
-  <em>Fig. 4:Example received power spectrum along TX-RX direction
+  <em>Fig. 5:Example received power spectrum along TX-RX direction
 pair along with the location of the actual ray tracing paths of a LOS
 link and a NLOS link. The black squares indicate the result of path
 estimation by the low-rank tensor decomposition.</em>
@@ -103,7 +111,7 @@ estimation by the low-rank tensor decomposition.</em>
 
 ## Link State Classification
 As shown in
-Fig. 2, we will classify the link as being in one of four states
+Fig. 6, we will classify the link as being in one of four states
 on the basis of the strongest received path:
 * <em>LOS</em>: The strongest received path is above the minimum threshold and is LOS;
 * <em>First-order NLOS</em>: The strongest received path is above
@@ -115,7 +123,7 @@ minimum threshold.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/Link-states.png" width="300" height="270">
   
-  <em>Fig. 5: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
+  <em>Fig. 6: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
 </p>
 
 Multi-class link classification: Instead of simply classifying
@@ -128,7 +136,7 @@ navigation directions.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/link-states_predict_map.png", width="500">
   
-  <em>Fig. 6: Two Link-States maps. (a) is truth from ray traying tool and
+  <em>Fig. 7: Two Link-States maps. (a) is truth from ray traying tool and
 (b) is result of the link-states classification neural network prediction.</em>
 </p>
 
@@ -142,7 +150,7 @@ strongest path angle of arrival.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/aoa_est_err.png">
   
-  <em>Fig. 7: Distribution of the absolute error between the estimated
+  <em>Fig. 8: Distribution of the absolute error between the estimated
 strongest path’s AoA from channel sounding and the AoA of the
 strongest path in real ray tracing data set.</em>
 </p>
@@ -158,11 +166,11 @@ the navigation goal in the Neural-SLAM module. If, on the
 other hand, the wireless-based navigation goal is considered
 unreliable, the mobile agent can use the exploration-based
 goal from the original global policy. This selection concept
-is illustrated in Fig. 8.
+is illustrated in Fig. 9.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/nslam_new.png", width="600">
   
-  <em>Fig. 7: MmWave-Based wireless path detection and link state classification are used to augment the Active Neural SLAM module [9] by
+  <em>Fig. 9: MmWave-Based wireless path detection and link state classification are used to augment the Active Neural SLAM module [9] by
 overwriting the navigation goal from the wireless path estimation.</em>
 </p>
 
@@ -184,13 +192,13 @@ threshold.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_rate.png", width="400">
   
-  <em>Fig. 8: Arrival success rate of three algorithms in easy, moderate,
+  <em>Fig. 10: Arrival success rate of three algorithms in easy, moderate,
 and hard environments.</em>
 </p>
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_speed.png", width="400">
   
-  <em>Fig. 9:Three cumulative distribution function (CDF) plots show
+  <em>Fig. 11:Three cumulative distribution function (CDF) plots show
 the arrival speed in easy, moderate, and hard difficult level. At all
 three difficulty levels, AoA when LOS or First-order NLOS algorithm
 performs most effectively. The results demonstrate the effectiveness
@@ -201,7 +209,7 @@ navigation problem.</em>
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/example_lsaoa_better.png", width="400">
   
-  <em>Fig. 10:An example of two different robot walling paths are
+  <em>Fig. 12:An example of two different robot walling paths are
 generated in a test case. In (a), the robot uses the AoA when LOS or
 First-order NLOS and spends 150 steps to arrive the TX. In (b), the
 robot uses the AoA based on SNR and spends 358 steps to reach the
