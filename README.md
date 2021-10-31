@@ -221,10 +221,8 @@ Regarding wireless, there are two data sets:
 
 Supporting data sets:
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/) 
-* Top-Down indoor maps
+* [Top-Down indoor maps](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_env)
 
-<!-- ## Wireless-Assisted Robotic Simulation
-The 'Active Neural SLAM' are using  -->
 
 ## Acknowledgments
 The authors were supported by NSF grants 1952180, 1925079, 1564142,
