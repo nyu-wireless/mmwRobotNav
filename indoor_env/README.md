@@ -51,24 +51,3 @@ by Remcom uses the top-down map to rebuild the 3D indoor
 model. Some assumptions are made to reduce the amount of ray
 tracing calculation.</em>
 </p>
-
-For each imported map, we then place the transmitters in
-10 randomly selected locations representing 10 possible target 
-positions. The ray tracing is then used to estimate the wireless
-paths at RX locations on a 160 x 160 grid with 0.15 x 0.15
-m grid representing a total area of 24 m^2. Example ray tracing
-simulations areas are shown in Fig. 4.
-The ray tracing is performed at 28 GHz, the most
-commonly-used frequency for 5G mmWave devices. We
-ignore the difference of material and treat all walls as the
-ITU (International Telecommunication Union) layered drywall
-whose permittivity is 2.94 (F/m) and conductivity is 0.1226
-(S/m) in 28 GHz.
-<p align="center">
-  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/remcom_maps.png" width="400">
-  
-  <em>Fig. 4: Four examples of ray tracing simulation area. In each map,
-ten green dots represent transmitter locations and a red dots grid
-represents the receiver grid with total 25,600 receivers. (The ceiling
-of room is not shown.)</em>
-</p>
