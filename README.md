@@ -4,6 +4,11 @@
 * Amee Trivedi (University of British Columbia)
 * Jeff Zhang (Harvard University)
 
+The work is based on
+
+* Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint [arXiv:2110.14789](https://arxiv.org/abs/2110.14789).
+* The figures and explanations in this repository can be found in the paper.
+
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/room_target_agent_new.png" width="300" height="300">
   
@@ -48,10 +53,6 @@ completely new environments outside the training set. In addition,
 the neural-SLAM module with the wireless path estimation and
 link state classifier provides rapid navigation to the target, close
 to a baseline that knows the target location.
-
-The work is based on
-
-* Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint [arXiv:2110.14789](https://arxiv.org/abs/2110.14789).
 
 ## Path Estimation
 Detailed antenna and multiple array modeling: Practical
@@ -225,7 +226,7 @@ simulation environment.
 This millimeter wave indoor wireless data can be combined with the [Habitat-Sim](https://github.com/facebookresearch/habitat-sim) robot simulator.
 Regarding wireless, there are two data sets:
 * [Indoor 28GHz ray tracing](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_ray_tracing)
-* MmWave MIMO channel modeling
+* [MmWave MIMO channel modeling](https://github.com/nyu-wireless/mmwRobotNav/tree/main/mmwave_channel_modeling)
 
 Supporting data sets:
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/) 
