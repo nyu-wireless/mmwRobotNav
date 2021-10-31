@@ -199,7 +199,7 @@ and hard environments.</em>
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_speed.png", width="400">
   
-  <em>Fig. 11:Three cumulative distribution function (CDF) plots show
+  <em>Fig. 11: Three cumulative distribution function (CDF) plots show
 the arrival speed in easy, moderate, and hard difficult level. At all
 three difficulty levels, AoA when LOS or First-order NLOS algorithm
 performs most effectively. The results demonstrate the effectiveness
@@ -210,7 +210,7 @@ navigation problem.</em>
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/example_lsaoa_better.png", width="400">
   
-  <em>Fig. 12:An example of two different robot walling paths are
+  <em>Fig. 12: An example of two different robot walling paths are
 generated in a test case. In (a), the robot uses the AoA when LOS or
 First-order NLOS and spends 150 steps to arrive the TX. In (b), the
 robot uses the AoA based on SNR and spends 358 steps to reach the
