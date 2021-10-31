@@ -4,6 +4,17 @@
 * Amee Trivedi (University of British Columbia)
 * Jeff Zhang (Harvard University)
 
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/room_target_agent_new.png" width="300" height="300">
+  
+  <em>Fig. 1: Target localization and navigation: A target has a wireless
+transponder and a robotic agent must locate and navigate to the target
+using received wireless signals. The path and map shown in the
+figure are example outputs of the [Active Neural-SLAM module](https://arxiv.org/abs/2004.05155)
+augmented with the proposed mmWave wireless path estimation and
+link state classification algorithm.</em>
+</p>
+
 The millimeter wave (mmWave) bands have attracted
 considerable attention for high precision localization applications
 due to the ability to capture high angular and temporal
@@ -19,7 +30,7 @@ and their angles.
 is then used to predict the link state, meaning if the strongest
 path is line-of-sight (LOS) or non-LOS (NLOS). For the NLOS
 case, the link state predictor also determines if the strongest
-path arrived via one or more reflections. 
+path arrived via one or more reflections, as shown in Fig. 2. 
 * Third, based on the
 link state, the agent either follows the estimated angles or
 explores the environment. 
