@@ -1,4 +1,4 @@
-# Ray Tracing Data Demo
+# Ray Tracing Data Set Demo
 
 Plot data from the ray tracing data set.
 
