@@ -1,4 +1,4 @@
-# Channel Modeling Data Demo
+# Channel Modeling Data Set Demo
 
 Plot data from the channel modeling data set.
 
