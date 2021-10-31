@@ -77,7 +77,12 @@ NLOS and outage. We show that for target localization
 application, both LOS and first-order NLOS paths
 have angles of arrival that strongly correlate with good
 navigation directions.
-
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/link-states_predict_map.png", width="500">
+  
+  <em>Fig. 3: Two Link-States maps. (a) is truth from ray traying tool and
+(b) is result of the link-states classification neural network prediction.</em>
+</p>
 
 The reason we are interested in this
 problem is that the angle of arrival of LOS and first-order
@@ -86,6 +91,13 @@ for navigation. Hence, if can reliably detect the link state and
 estimate the angle of arrival of the strongest path, we can
 build a navigation system that simply follows the estimated
 strongest path angle of arrival.
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/aoa_est_err.png">
+  
+  <em>Fig. 4: Distribution of the absolute error between the estimated
+strongest path’s AoA from channel sounding and the AoA of the
+strongest path in real ray tracing data set.</em>
+</p>
 
 
 ## Indoor MmWave Robotic Data Sets
