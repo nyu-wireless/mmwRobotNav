@@ -181,6 +181,33 @@ the estimated AoA when the strongest path is in a LOS
 state or first-order NLOS and the SNR is above the
 threshold.
 
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_rate.png", width="400">
+  
+  <em>Fig. 8: Arrival success rate of three algorithms in easy, moderate,
+and hard environments.</em>
+</p>
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_speed.png", width="400">
+  
+  <em>Fig. 9:Three cumulative distribution function (CDF) plots show
+the arrival speed in easy, moderate, and hard difficult level. At all
+three difficulty levels, AoA when LOS or First-order NLOS algorithm
+performs most effectively. The results demonstrate the effectiveness
+of the link-state classification neural network in improving the robot
+navigation problem.</em>
+</p>
+</p>
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/example_lsaoa_better.png", width="400">
+  
+  <em>Fig. 10:An example of two different robot walling paths are
+generated in a test case. In (a), the robot uses the AoA when LOS or
+First-order NLOS and spends 150 steps to arrive the TX. In (b), the
+robot uses the AoA based on SNR and spends 358 steps to reach the
+TX. The area framed by the black dashed line shows the difference
+between the two algorithms.</em>
+</p>
 
 
 ## Indoor MmWave Robotic Data Sets
