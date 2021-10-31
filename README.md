@@ -101,8 +101,6 @@ link and a NLOS link. The black squares indicate the result of path
 estimation by the low-rank tensor decomposition.</em>
 </p>
 
-
-
 ## Link State Classification
 As shown in
 Fig. 2, we will classify the link as being in one of four states
@@ -117,7 +115,7 @@ minimum threshold.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/Link-states.png" width="300" height="270">
   
-  <em>Fig. 2: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
+  <em>Fig. 5: A demonstration of the LOS, Higher-order NLOS, and Higherorder NLOS.</em>
 </p>
 
 Multi-class link classification: Instead of simply classifying
@@ -130,7 +128,7 @@ navigation directions.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/link-states_predict_map.png", width="500">
   
-  <em>Fig. 3: Two Link-States maps. (a) is truth from ray traying tool and
+  <em>Fig. 6: Two Link-States maps. (a) is truth from ray traying tool and
 (b) is result of the link-states classification neural network prediction.</em>
 </p>
 
@@ -144,10 +142,45 @@ strongest path angle of arrival.
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/aoa_est_err.png">
   
-  <em>Fig. 4: Distribution of the absolute error between the estimated
+  <em>Fig. 7: Distribution of the absolute error between the estimated
 strongest path’s AoA from channel sounding and the AoA of the
 strongest path in real ray tracing data set.</em>
 </p>
+
+## Wireless-Assisted Robotic Navigation Integration With NEURAL-SLAM
+Of course, the link state and the path estimate are not
+known a priori by the mobile agent. We thus propose to
+use the link state classification along with the estimated SNR
+of the strongest path to make a decision on whether to use
+the wireless-based navigation goal or not. If the wirelessbased
+navigation goal is selected, it can simply overwrite
+the navigation goal in the Neural-SLAM module. If, on the
+other hand, the wireless-based navigation goal is considered
+unreliable, the mobile agent can use the exploration-based
+goal from the original global policy. This selection concept
+is illustrated in Fig. 8.
+<p align="center">
+  <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/nslam_new.png", width="600">
+  
+  <em>Fig. 7: MmWave-Based wireless path detection and link state classification are used to augment the Active Neural SLAM module [9] by
+overwriting the navigation goal from the wireless path estimation.</em>
+</p>
+
+We consider three possible selection algorithms for determining
+whether or not to use the estimated AoA from the
+wireless detection:
+* AoA based on SNR only: The robot follows the AoA of
+the highest SNR path if the path SNR is above some
+threshold in any link state. Otherwise, the robot follows
+the goal from Active Neural SLAM map exploration.
+* AoA when LOS: The robot follows the estimated AoA
+when the strongest path is in a LOS state and the SNR
+is above the threshold.
+* AoA when LOS or First-order NLOS: The robot follows
+the estimated AoA when the strongest path is in a LOS
+state or first-order NLOS and the SNR is above the
+threshold.
+
 
 
 ## Indoor MmWave Robotic Data Sets
