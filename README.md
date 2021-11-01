@@ -229,6 +229,9 @@ Regarding wireless, there are two data sets:
 * [Indoor 28GHz ray tracing](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_ray_tracing)
 * [MmWave MIMO channel modeling](https://github.com/nyu-wireless/mmwRobotNav/tree/main/mmwave_channel_modeling)
 
+Habitat-Sim and Active Neural SLAM adaptive data set:
+* [Robot simulation](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation)
+
 Supporting data sets:
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/) 
 * [Top-Down indoor maps](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_env)
