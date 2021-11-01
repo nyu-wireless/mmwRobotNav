@@ -240,7 +240,7 @@ Supporting data sets:
 ## Acknowledgments
 * The authors were supported by NSF grants 1952180, 1925079, 1564142,
 1547332, the SRC, OPPO, and the industrial affiliates of NYU WIRELESS.
-The work was also supported by RemCom that provided the [Wireless Insite](https://www.remcom.com/wireless-insite-em-propagation-software)
+* The work was also supported by RemCom that provided the [Wireless Insite](https://www.remcom.com/wireless-insite-em-propagation-software)
 software.
 * [Habitat API](https://github.com/facebookresearch/habitat-api)
 * [Habitat sim](https://github.com/facebookresearch/habitat-sim)
