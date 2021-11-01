@@ -1,25 +1,32 @@
 Still working on...................................
-# Active Neural SLAM
-This is a PyTorch implementation of the ICLR-20 paper:
+# MmWave Wireless-assisted Indoor Navigation Integration with Active Neural SLAM
 
-[Learning To Explore Using Active Neural SLAM](https://openreview.net/pdf?id=HklXn1BKDH)<br />
-Devendra Singh Chaplot, Dhiraj Gandhi, Saurabh Gupta, Abhinav Gupta, Ruslan Salakhutdinov<br />
-Carnegie Mellon University, Facebook AI Research, UIUC
-
-Project Website: https://devendrachaplot.github.io/projects/Neural-SLAM
-
-![example](./docs/example.gif)
+### Acknowledgements
+This work is based on:
+* [Habitat API](https://github.com/facebookresearch/habitat-api)
+* [habitat-sim](https://github.com/facebookresearch/habitat-sim)
+* [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM)
 
 ### Overview:
-The Active Neural SLAM model consists of three modules: a Global Policy, a Local Policy and a Neural SLAM Module. 
-As shown below, the Neural-SLAM module predicts a map and agent pose estimate from incoming RGB observations and 
-sensor readings. This map and pose are used by a Global policy to output a long-term goal, which is converted to 
-a short-term goal using an analytic path planner. A Local Policy is trained to navigate to this short-term goal.
+The method is demonstrated on a
+[large dataset of indoor environments](http://gibsonenv.stanford.edu/database/) 
+supplemented with ray
+tracing to simulate the wireless propagation. The path estimation
+and link state classification are also integrated into a [state-ofthe-
+art neural simultaneous localization and mapping (SLAM)
+module](https://arxiv.org/abs/2004.05155)
+to augment camera and LIDAR-based navigation. It is
+shown that the link state classifier can successfully generalize to
+completely new environments outside the training set. In addition,
+the neural-SLAM module with the wireless path estimation and
+link state classifier provides rapid navigation to the target, close
+to a baseline that knows the target location.
 
-![overview](./docs/overview.png)
+## Installing Dependencies (from [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM))
+We develop the mmWave wireless-assisted indoor navigation from the "Active Neural SLAM".
 
-
-## Installing Dependencies
+### <em>Following [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM) guidance:</em>
+  
 We use earlier versions of [habitat-sim](https://github.com/facebookresearch/habitat-sim) and [habitat-api](https://github.com/facebookresearch/habitat-api). The specific commits are mentioned below.
 
 Installing habitat-sim:
@@ -45,7 +52,7 @@ conda install pytorch==1.2.0 torchvision cudatoolkit=10.0 -c pytorch #(Linux wit
 conda install pytorch==1.2.0 torchvision==0.4.0 -c pytorch #(Mac OS)
 ```
 
-## Setup
+### <em> Setup [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM):</em>
 Clone the repository and install other requirements:
 ```
 git clone --recurse-submodules https://github.com/devendrachaplot/Neural-SLAM
@@ -121,7 +128,4 @@ For more detailed instructions, see [INSTRUCTIONS](./docs/INSTRUCTIONS.md).
 }
 ```
 
-## Acknowledgements
-This repository uses Habitat API (https://github.com/facebookresearch/habitat-api) and parts of the code from the API.
-The implementation of PPO is borrowed from https://github.com/ikostrikov/pytorch-a2c-ppo-acktr-gail/.
-We thank Guillaume Lample for discussions and coding during initial stages of this project.
+
