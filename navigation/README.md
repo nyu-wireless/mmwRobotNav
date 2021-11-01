@@ -100,5 +100,9 @@ Neural-SLAM/
 ```
 ### Get Tx location from "Ray tracing" data set
 [Link](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_ray_tracing/data/tx_position)
+```
+% correct y
+y = -y
+```
 
 
