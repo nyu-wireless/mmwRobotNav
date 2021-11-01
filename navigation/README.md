@@ -36,7 +36,6 @@ cd habitat-sim; git checkout 9575dcd45fe6f55d2a44043833af08972a7895a9;
 pip install -r requirements.txt; 
 python setup.py install --headless
 python setup.py install # (for Mac OS)
-
 ```
 
 Installing habitat-api:
@@ -84,48 +83,8 @@ To verify that dependencies are correctly installed and data is setup correctly,
 python main.py -n1 --auto_gpu_config 0 --split val
 ```
 
-
 ## Usage
 
 ### Training:
-For training the complete Active Neural SLAM model on the Exploration task:
-```
-python main.py
-```
-
-### Downloading pre-trained models
-```
-mkdir pretrained_models;
-wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1UK2hT0GWzoTaVR5lAI6i8o27tqEmYeyY' -O pretrained_models/model_best.global;
-wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1A1s_HNnbpvdYBUAiw2y1JmmELRLfAJb8' -O pretrained_models/model_best.local;
-wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1o5OG7DIUKZyvi5stozSqRpAEae1F2BmX' -O pretrained_models/model_best.slam;
-```
-
-### For evaluation:
-For evaluating the pre-trained models:
-```
-python main.py --split val --eval 1 --train_global 0 --train_local 0 --train_slam 0 \
---load_global pretrained_models/model_best.global \
---load_local pretrained_models/model_best.local \
---load_slam pretrained_models/model_best.slam 
-```
-
-For visualizing the agent observations and predicted map and pose, add `-v 1` as an argument to the above
-
-For more detailed instructions, see [INSTRUCTIONS](./docs/INSTRUCTIONS.md).
-
-
-## Cite as
->Chaplot, D.S., Gandhi, D., Gupta, S., Gupta, A. and Salakhutdinov, R., 2020. Learning To Explore Using Active Neural SLAM. In International Conference on Learning Representations (ICLR). ([PDF](https://openreview.net/pdf?id=HklXn1BKDH))
-
-### Bibtex:
-```
-@inproceedings{chaplot2020learning,
-  title={Learning To Explore Using Active Neural SLAM},
-  author={Chaplot, Devendra Singh and Gandhi, Dhiraj and Gupta, Saurabh and Gupta, Abhinav and Salakhutdinov, Ruslan},
-  booktitle={International Conference on Learning Representations (ICLR)},
-  year={2020}
-}
-```
 
 
