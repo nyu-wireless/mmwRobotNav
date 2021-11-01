@@ -105,4 +105,6 @@ Neural-SLAM/
 y = -y
 ```
 
+## Usage
+### Place 
 
