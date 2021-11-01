@@ -84,7 +84,21 @@ python main.py -n1 --auto_gpu_config 0 --split val
 ```
 
 ## Import Wireless Data
-
-### 
+### Place data in "Neural-SLAM" root folder 
+```
+Neural-SLAM/
+  data/
+    wireless_data/
+      txt/
+        Adrian/
+        Adrian_Tx_1_aoa.txt
+        Adrian_Tx_1_linkstate.txt
+        ...
+        Bowlus/
+        ...
+        ...
+```
+### Get Tx location from "Ray tracing" data set
+[Link](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_ray_tracing/data/tx_position)
 
 
