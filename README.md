@@ -190,6 +190,7 @@ the estimated AoA when the strongest path is in a LOS
 state or first-order NLOS and the SNR is above the
 threshold.
 
+An example result can be found [here](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation/example)
 <p align="center">
   <img src="https://github.com/nyu-wireless/mmwRobotNav/blob/main/figs/arrival_rate.png", width="400">
   
