@@ -4,7 +4,7 @@ Still working on...................................
 ### Acknowledgements
 This work is based on:
 * [Habitat API](https://github.com/facebookresearch/habitat-api)
-* [habitat-sim](https://github.com/facebookresearch/habitat-sim)
+* [Habitat sim](https://github.com/facebookresearch/habitat-sim)
 * [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM)
 
 ### Overview:
