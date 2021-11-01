@@ -83,8 +83,8 @@ To verify that dependencies are correctly installed and data is setup correctly,
 python main.py -n1 --auto_gpu_config 0 --split val
 ```
 
-## Usage
+## Import Wireless Data
 
-### Training:
+### 
 
 
