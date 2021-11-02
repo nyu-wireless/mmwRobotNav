@@ -106,5 +106,14 @@ y = -y
 ```
 
 ## Usage
-### Place 
+### Place different
 
+### Run code
+```
+% Select algorithm by <AlgorithmName.py>
+% Select number of local steps, typical number = 10; 12; 15; 20 (Read [Active NSLAM](https://arxiv.org/abs/2004.05155))
+% Select folder of saving result by -d <ResultFolder>
+% Select result name by --exp_name <MapName_TxNum>
+
+python <AlgorithmName.py> --eval 1 --auto_gpu_config 0 --num_processes 1 --num_episodes 1 --num_processes_per_gpu 5 --num_local_steps <NumLocalSteps> --load_global pretrained_models/model_best.global --train_global 0 --load_local pretrained_models/model_best.local --train_local 0 --load_slam pretrained_models/model_best.slam --train_slam 0 --print_images 1 -d <ResultFolder> --exp_name <MapName_TxNum>
+```
