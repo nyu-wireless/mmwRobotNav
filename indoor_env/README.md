@@ -52,6 +52,6 @@ model. Some assumptions are made to reduce the amount of ray
 tracing calculation.</em>
 </p>
 
-# Useful link:
+# Useful Links:
 * [Gibson in Habitat AI](https://github.com/facebookresearch/habitat-api#data)
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/)
