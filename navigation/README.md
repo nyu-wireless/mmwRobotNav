@@ -1,4 +1,3 @@
-Still working on...................................
 # MmWave Wireless-assisted Indoor Navigation Integration with Active Neural SLAM
 
 ### Acknowledgements
