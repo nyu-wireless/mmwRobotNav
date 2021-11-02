@@ -156,6 +156,11 @@ strongest path’s AoA from channel sounding and the AoA of the
 strongest path in real ray tracing data set.</em>
 </p>
 
+### Two hidden layers neural nextwork
+We present a link-state classification neural nextwork which trained on 18 maps and tested on other 20 maps.
+Also we implement the wireless-assisted robotic navigation based on this classification result.
+([Detail](https://github.com/nyu-wireless/mmwRobotNav/tree/main/link-state_classification))
+
 ## Wireless-Assisted Robotic Navigation Integration with Neural SLAM
 Of course, the link state and the path estimate are not
 known a priori by the mobile agent. We thus propose to
