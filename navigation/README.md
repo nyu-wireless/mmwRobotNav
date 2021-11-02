@@ -148,7 +148,8 @@ Neural-SLAM/
 ```
 
 ### Configure algorithm codes
-__MUST match the map and TX number you configured in last step__
+[codes](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation/code)
+__MUST match the map and TX number configured in last step__
 * 1_baseline.py: robot knows TX location
 * 2_aoa_when_los_or_first-order_nlos.py: AoA when LOS or First-order NLOS: The robot follows the estimated AoA when the strongest path is in a LOS state or first-order NLOS and the SNR is above the threshold
 * 3_aoa_when_los.py: The robot follows the estimated AoA when the strongest path is in a LOS state and the SNR is above the threshold.
