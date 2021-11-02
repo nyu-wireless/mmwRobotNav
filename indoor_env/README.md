@@ -51,3 +51,7 @@ by Remcom uses the top-down map to rebuild the 3D indoor
 model. Some assumptions are made to reduce the amount of ray
 tracing calculation.</em>
 </p>
+
+# Useful link:
+* [Gibson in Habitat AI](https://github.com/facebookresearch/habitat-api#data)
+* [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/)
