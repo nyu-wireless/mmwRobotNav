@@ -150,16 +150,25 @@ Neural-SLAM/
 ### Configure algorithm codes
 __MUST match the map and TX number you configured in last step__
 * 1_baseline.py: robot knows TX location
+* 2_aoa_when_los_or_first-order_nlos.py: AoA when LOS or First-order NLOS: The robot follows the estimated AoA when the strongest path is in a LOS state or first-order NLOS and the SNR is above the threshold
+* 3_aoa_when_los.py: The robot follows the estimated AoA when the strongest path is in a LOS state and the SNR is above the threshold.
+* 4_aoa_based_on_SNR_only.py: The robot follows the AoA of the highest SNR path if the path SNR is above some threshold in any link state. Otherwise, the robot follows the goal from Active Neural SLAM map exploration.
+
 ```
 % enter the name of map, testing tx number, and TX location
-LINE69  map_name = <'MAP_NAME'>		# for example: map_name = 'Adrian'
-LINE70  tx_name = <'TX_NUMBER'>		# for example: tx_name = '10'
-LINE71  x_y = <[X_TX, Y_TX]>		  # for example: x_y = [9.3,20.45] #10
+LINE69  map_name = <'MAP_NAME'>   # for example: map_name = 'Adrian'
+LINE70  tx_name = <'TX_NUMBER'>   # for example: tx_name = '10'
+LINE71  x_y = <[X_TX, Y_TX]>    # for example: x_y = [9.3,20.45] #10
 ```
 
-* 2_aoa_when_los_or_first-order_NLOS.py: AoA when LOS or First-order NLOS: The robot follows the estimated AoA when the strongest path is in a LOS state or first-order NLOS and the SNR is above the threshold
-* 3_aoa_when_los.py: The robot follows the estimated AoA when the strongest path is in a LOS state and the SNR is above the threshold.
-* 4_aoa_based_on_SNR_only: The robot follows the AoA of the highest SNR path if the path SNR is above some threshold in any link state. Otherwise, the robot follows the goal from Active Neural SLAM map exploration.
+#### Place in "Neural-SLAM" root folder
+```
+Neural-SLAM/
+  1_baseline.py
+  2_aoa_when_los_or_first-order_nlos.py
+  3_aoa_when_los.py
+  4_aoa_based_on_SNR_only.py
+```
 
 ## Usage
 ### Run code
@@ -170,6 +179,11 @@ LINE71  x_y = <[X_TX, Y_TX]>		  # for example: x_y = [9.3,20.45] #10
 % Select result name by --exp_name <MapName_TxNum>
 
 python <AlgorithmName.py> --eval 1 --auto_gpu_config 0 --num_processes 1 --num_episodes 1 --num_processes_per_gpu 5 --num_local_steps <NumLocalSteps> --load_global pretrained_models/model_best.global --train_global 0 --load_local pretrained_models/model_best.local --train_local 0 --load_slam pretrained_models/model_best.slam --train_slam 0 --print_images 1 -d <ResultFolder> --exp_name <MapName_TxNum>
+```
+
+Example: we can configure Adrian TX 10, and run baseline and store result in folder "baseline_result":
+```
+python 1_baseline.py --eval 1 --auto_gpu_config 0 --num_processes 1 --num_episodes 1 --num_processes_per_gpu 5 --num_local_steps 10 --load_global pretrained_models/model_best.global --train_global 0 --load_local pretrained_models/model_best.local --train_local 0 --load_slam pretrained_models/model_best.slam --train_slam 0 --print_images 1 -d baseline_result --exp_name Adrian_Tx_10
 ```
 
 ### Result folder
