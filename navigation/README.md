@@ -25,7 +25,7 @@ to a baseline that knows the target location.
 ## Installing Dependencies (from [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM))
 We develop the mmWave wireless-assisted indoor navigation from the "Active Neural SLAM".
 
-### <em>Following [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM) guidance:</em>
+### <em>Following [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM) guidance</em>
   
 We use earlier versions of [habitat-sim](https://github.com/facebookresearch/habitat-sim) and [habitat-api](https://github.com/facebookresearch/habitat-api). The specific commits are mentioned below.
 
@@ -51,7 +51,7 @@ conda install pytorch==1.2.0 torchvision cudatoolkit=10.0 -c pytorch #(Linux wit
 conda install pytorch==1.2.0 torchvision==0.4.0 -c pytorch #(Mac OS)
 ```
 
-### <em> Setup [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM):</em>
+### <em> Setup [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM)</em>
 Clone the repository and install other requirements:
 ```
 git clone --recurse-submodules https://github.com/devendrachaplot/Neural-SLAM
@@ -81,6 +81,14 @@ Please download the data using the instructions here: https://github.com/faceboo
 To verify that dependencies are correctly installed and data is setup correctly, run:
 ```
 python main.py -n1 --auto_gpu_config 0 --split val
+```
+
+### <em>Downloading pre-trained models</em>
+```
+mkdir pretrained_models;
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1UK2hT0GWzoTaVR5lAI6i8o27tqEmYeyY' -O pretrained_models/model_best.global;
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1A1s_HNnbpvdYBUAiw2y1JmmELRLfAJb8' -O pretrained_models/model_best.local;
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1o5OG7DIUKZyvi5stozSqRpAEae1F2BmX' -O pretrained_models/model_best.slam;
 ```
 
 ## Import Wireless Data
