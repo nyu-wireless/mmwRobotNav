@@ -149,8 +149,6 @@ Neural-SLAM/
 ```
 
 ## Usage
-### Place different
-
 ### Run code
 ```
 % Select algorithm by <AlgorithmName.py>
@@ -159,4 +157,15 @@ Neural-SLAM/
 % Select result name by --exp_name <MapName_TxNum>
 
 python <AlgorithmName.py> --eval 1 --auto_gpu_config 0 --num_processes 1 --num_episodes 1 --num_processes_per_gpu 5 --num_local_steps <NumLocalSteps> --load_global pretrained_models/model_best.global --train_global 0 --load_local pretrained_models/model_best.local --train_local 0 --load_slam pretrained_models/model_best.slam --train_slam 0 --print_images 1 -d <ResultFolder> --exp_name <MapName_TxNum>
+```
+
+### Result folder
+```
+Neural-SLAM/
+  <ResultFolder>/
+    dump/
+      <MapName_TxNum>/
+        episodes/1/1/   % pictures of each different frame (walking steps)
+        path            % numpy file of robot walking path
+        TX_pos          % numpy file of location of TX in this test
 ```
