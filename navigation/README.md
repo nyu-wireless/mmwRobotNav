@@ -90,7 +90,7 @@ wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1A1s
 wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1o5OG7DIUKZyvi5stozSqRpAEae1F2BmX' -O pretrained_models/model_best.slam;
 ```
 
-## Import Wireless Data
+## Import Wireless Data and Configuration
 ### Place wireless data in "Neural-SLAM" root folder 
 ```
 Neural-SLAM/
@@ -146,6 +146,20 @@ Neural-SLAM/
       __init__.py
       utils/
 ```
+
+### Configure algorithm codes
+__MUST match the map and TX number you configured in last step__
+* 1_baseline.py: robot knows TX location
+```
+% enter the name of map, testing tx number, and TX location
+LINE69  map_name = <'MAP_NAME'>		# for example: map_name = 'Adrian'
+LINE70  tx_name = <'TX_NUMBER'>		# for example: tx_name = '10'
+LINE71  x_y = <[X_TX, Y_TX]>		  # for example: x_y = [9.3,20.45] #10
+```
+
+* 2_aoa_when_los_or_first-order_NLOS.py: AoA when LOS or First-order NLOS: The robot follows the estimated AoA when the strongest path is in a LOS state or first-order NLOS and the SNR is above the threshold
+* 3_aoa_when_los.py: The robot follows the estimated AoA when the strongest path is in a LOS state and the SNR is above the threshold.
+* 4_aoa_based_on_SNR_only: The robot follows the AoA of the highest SNR path if the path SNR is above some threshold in any link state. Otherwise, the robot follows the goal from Active Neural SLAM map exploration.
 
 ## Usage
 ### Run code
