@@ -32,3 +32,6 @@ approximately 3 dB below the maximum.
 as well as the best for all three arrays. We see that by using multiple
 arrays we can obtain full azimuth coverage.</em>
 </p>
+
+## Useful Link
+* [NYU Wireless Comm by Prof.Rangan](https://github.com/sdrangan/wirelesscomm) 
