@@ -92,7 +92,7 @@ wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1o5O
 ```
 
 ## Import Wireless Data
-### Place data in "Neural-SLAM" root folder 
+### Place wireless data in "Neural-SLAM" root folder 
 ```
 Neural-SLAM/
   data/
@@ -111,6 +111,41 @@ Neural-SLAM/
 ```
 % correct y
 y = -y
+```
+
+### Configure codes and place in Neural-SLAM folder
+* replace original 'visualizations.py' by [link](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation/code/env/habitat/utils)
+```
+Neural-SLAM/
+  env/
+    habitat/
+      utils/
+        visualizations.py
+```
+* configure '__ init__.py' in [link](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation/code/env/habitat/) and place it in folder 'env/habitat'
+```
+% endter the name of the map
+LINE44 scenes = [<'MAP_NAME'>] # for example: scenes = ['Adrian']
+
+% replace original '__init__.py' in correct folder
+Neural-SLAM/
+  env/
+    habitat/
+      __init__.py
+      utils/
+```
+* configure 'exploration_env.py' in [link](https://github.com/nyu-wireless/mmwRobotNav/tree/main/navigation/code/env/habitat/) and place it in folder 'env/habitat'
+```
+% endter the location of particular TX of the test 
+LINE555 x_y = [<X_TX, Y_TX>] # for example: Adrain map TX-10: x_y = [9.3,20.45]
+
+% replace original 'exploration_env.py' in correct folder
+Neural-SLAM/
+  env/
+    habitat/
+      exploration_env.py
+      __init__.py
+      utils/
 ```
 
 ## Usage
