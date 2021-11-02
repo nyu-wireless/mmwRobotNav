@@ -239,6 +239,7 @@ Habitat-Sim and Active Neural SLAM adaptive data set:
 
 Supporting data sets:
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/) 
+* [Gibson in Habitat AI](https://github.com/facebookresearch/habitat-api#data)
 * [Top-Down indoor maps](https://github.com/nyu-wireless/mmwRobotNav/tree/main/indoor_env)
 
 
