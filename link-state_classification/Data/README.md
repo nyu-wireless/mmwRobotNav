@@ -1,1 +1,0 @@
-### Channel modeling results
