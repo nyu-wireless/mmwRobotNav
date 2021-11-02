@@ -55,3 +55,4 @@ tracing calculation.</em>
 # Useful Links:
 * [Gibson in Habitat AI](https://github.com/facebookresearch/habitat-api#data)
 * [Gibson indoor 3D models](http://gibsonenv.stanford.edu/database/)
+* [RemCom Wireless Insite](https://www.remcom.com/wireless-insite-em-propagation-software)
