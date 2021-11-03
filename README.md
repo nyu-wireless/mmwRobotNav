@@ -1,4 +1,4 @@
-# Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification
+# Millimeter Wave Wireless Assisted Robot Navigation with Link State Classification
 
 * Mingsheng Yin, Akshaj Veldanda, Kai Pfeiffer, Yaqi Hu, Siddharth Garg, Elza Erkip, Ludovic Righetti, Sundeep Rangan (New York University)
 * Amee Trivedi (University of British Columbia)
