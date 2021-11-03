@@ -6,7 +6,7 @@
 
 The work is based on
 
-* Millimeter Wave Wireless-Assisted Robotic Navigation with Link State Classification. arXiv preprint [arXiv:2110.14789](https://arxiv.org/abs/2110.14789).
+* Millimeter Wave Wireless Assisted Robot Navigation with Link State Classification. arXiv preprint [arXiv:2110.14789](https://arxiv.org/abs/2110.14789).
 * The figures and explanations in this repository can be found in the paper.
 
 <p align="center">
