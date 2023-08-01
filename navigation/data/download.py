@@ -1,5 +1,7 @@
 import sys
 import requests
+import zipfile
+import os
 
 
 def download_file_from_google_drive(id, destination):
@@ -33,6 +35,13 @@ def save_response_content(response, destination):
             if chunk:  # filter out keep-alive new chunks
                 f.write(chunk)
 
+def unzip_file(zip_file_path, extract_to):
+    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_to)
+
+    # Delete the zip file after extraction
+    os.remove(zip_file_path)
+
 
 def main():
     if len(sys.argv) == 2:
@@ -53,6 +62,14 @@ def main():
     else:
         print('Cannot download, please check your cammond.')
         print('Please run code by python download.py All')
+        exit()
+    print('done')
+    print('start unzip')
+
+    # After downloading the files, unzip them if needed
+    print(f"Unzipping {opt}.zip...")
+    unzip_file('./All.zip', './')
+    unzip_file('./tx_position.zip', './')
     print('done')
 
 
