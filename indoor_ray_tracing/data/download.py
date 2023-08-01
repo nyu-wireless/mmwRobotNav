@@ -1,5 +1,8 @@
 import sys
 import requests
+import zipfile
+import os
+import shutil
 
 
 def download_file_from_google_drive(id, destination):
@@ -32,6 +35,31 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk:  # filter out keep-alive new chunks
                 f.write(chunk)
+
+def unzip_file(zip_file_path, extract_to):
+    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+        # Create a folder with the same name as the zip file
+        zip_folder_name = os.path.splitext(os.path.basename(zip_file_path))[0]
+        zip_folder_path = os.path.join(extract_to, zip_folder_name)
+        os.makedirs(zip_folder_path, exist_ok=True)
+
+        for file_info in zip_ref.infolist():
+            if file_info.is_dir():
+                continue
+
+            file_name = os.path.basename(file_info.filename)
+            dest_path = os.path.join(zip_folder_path, file_name)
+
+            if file_name.endswith('.zip'):
+                print(f"Unzipping nested zip file: {file_name}...")
+                nested_zip_path = zip_ref.extract(file_info, zip_folder_path)
+                unzip_file(nested_zip_path, zip_folder_path)
+            else:
+                with zip_ref.open(file_info) as source, open(dest_path, 'wb') as target:
+                    shutil.copyfileobj(source, target)
+
+    # Delete the zip file after extraction
+    os.remove(zip_file_path)
 
 
 def main():
@@ -82,8 +110,36 @@ def main():
         print('Cannot download, please check your cammond.')
         print('Please run code by python download.py PartX')
         print('Replace PartX with one of: Part1, Part2, Part3, Part4, Part5, All')
+        exit()
     print('done')
 
+    print('start unzip')
+
+    # After downloading the files, unzip them if needed
+    if opt == 'Part1':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part1.zip', './')
+    elif opt == 'Part2':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part2.zip', './')
+    elif opt == 'Part3':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part3.zip', './')
+    elif opt == 'Part4':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part4.zip', './')
+    elif opt == 'Part5':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part5.zip', './')
+    elif opt == 'All':
+        print(f"Unzipping {opt}.zip...")
+        unzip_file('./Part1.zip', './')
+        unzip_file('./Part2.zip', './')
+        unzip_file('./Part3.zip', './')
+        unzip_file('./Part4.zip', './')
+        unzip_file('./Part5.zip', './')
+    unzip_file('./tx_position.zip', './')
+    print('done')
 
 if __name__ == "__main__":
     main()

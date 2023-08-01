@@ -1,10 +1,13 @@
-# Run download.py
+#### To get correct tx position:
+```
+% first -y
+y = -y
 
-## The whole dataset is splited into 5 parts. For each part, take about 2 mins to download.
+% for 480 * 480 map
+x = x / 0.05
+y = y / 0.05
 
-python download.py [X]
-
-Replace [X] with one of: Part1, Part2, Part3, Part4, Part5, All
-
-For example, 
-    python download.py Part1
+% around to int if needed
+x = int(x)
+y = int(y)
+```
