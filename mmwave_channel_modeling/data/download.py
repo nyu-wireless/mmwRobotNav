@@ -43,63 +43,49 @@ def unzip_file(zip_file_path, extract_to):
     os.remove(zip_file_path)
 
 def main():
-    if len(sys.argv) == 2:
-        opt = sys.argv[1]
-    else:
-        print('Cannot download, please check your cammond. *')
-        print('Please run code by python download.py PartX')
+    if len(sys.argv) != 2:
+        print('Cannot download, please check your command.')
+        print('Please run the code by python download.py PartX')
         print('Replace PartX with one of: Part1, Part2, Part3, All')
         exit()
-        
-    drive_id = ['1Fw_vq2ZjejMjziOHGMqQRC4r4BmnRMVa', # Part1.zip
-                '15fA5QZIsTGkl2tEH3Kz1m0Y00laNYgMX', # Part2.zip
-                '1GSjFEJ2zex6vPyYnDt62z0Q86NVHT7pN', # Part3.zip
-                '1LE-UTlnt8i9mz6-91D_P3DIUoKO9xxVy'] # tx_posistion.zip
-    print("dowload TxPosition, CHECK README.md to use the coordinates of TX.")
-    size_list = ['31MB', "33MB", '29MB']
+
+    opt = sys.argv[1]
+    drive_id = [
+        '1Fw_vq2ZjejMjziOHGMqQRC4r4BmnRMVa',  # Part1.zip
+        '15fA5QZIsTGkl2tEH3Kz1m0Y00laNYgMX',  # Part2.zip
+        '1GSjFEJ2zex6vPyYnDt62z0Q86NVHT7pN',  # Part3.zip
+        '1LE-UTlnt8i9mz6-91D_P3DIUoKO9xxVy'   # tx_position.zip
+    ]
+    size_list = ['31MB', '33MB', '29MB']
+
+    print("Download TxPosition, CHECK README.md to use the coordinates of TX.")
     download_file_from_google_drive(drive_id[3], './tx_position.zip')
-    if opt == 'Part1':
-        print(f"dowload {opt} with {size_list[0]}")
-        download_file_from_google_drive(drive_id[0], './Part1.zip')
-    elif opt == 'Part2':
-        print(f"dowload {opt} with {size_list[1]}")
-        download_file_from_google_drive(drive_id[1], './Part2.zip')
-    elif opt == 'Part3':
-        print(f"dowload {opt} with {size_list[2]}")
-        download_file_from_google_drive(drive_id[2], './Part3.zip')
-    elif opt == 'All':
-        print(f"dowload {opt} with {size_list[0]}")
-        download_file_from_google_drive(drive_id[0], './Part1.zip')
-        print(f"dowload {opt} with {size_list[1]}")
-        download_file_from_google_drive(drive_id[1], './Part2.zip')
-        print(f"dowload {opt} with {size_list[2]}")
-        download_file_from_google_drive(drive_id[2], './Part3.zip')
+
+    if opt == 'All':
+        for i in range(3):
+            print(f"Download Part{i + 1} with {size_list[i]}")
+            download_file_from_google_drive(drive_id[i], f'./Part{i + 1}.zip')
+    elif opt.startswith('Part') and opt[4:].isdigit() and 1 <= int(opt[4:]) <= 3:
+        part_num = int(opt[4:])
+        print(f"Download {opt} with {size_list[part_num - 1]}")
+        download_file_from_google_drive(drive_id[part_num - 1], f'./{opt}.zip')
     else:
-        print('Cannot download, please check your cammond.')
-        print('Please run code by python download.py PartX')
+        print('Invalid command. Please run the code by python download.py PartX')
         print('Replace PartX with one of: Part1, Part2, Part3, All')
         exit()
-    print('done')
-    print('start unzip')
 
-    # After downloading the files, unzip them if needed
-    if opt == 'Part1':
+    print('Download completed. Starting unzip.')
+
+    if opt == 'All':
+        for i in range(3):
+            print(f"Unzipping Part{i + 1}.zip...")
+            unzip_file(f'./Part{i + 1}.zip', './')
+    else:
         print(f"Unzipping {opt}.zip...")
-        unzip_file('./Part1.zip', './')
-    elif opt == 'Part2':
-        print(f"Unzipping {opt}.zip...")
-        unzip_file('./Part2.zip', './')
-    elif opt == 'Part3':
-        print(f"Unzipping {opt}.zip...")
-        unzip_file('./Part3.zip', './')
-    elif opt == 'All':
-        print(f"Unzipping {opt}.zip...")
-        unzip_file('./Part1.zip', './')
-        unzip_file('./Part2.zip', './')
-        unzip_file('./Part3.zip', './')
+        unzip_file(f'./{opt}.zip', './')
+
     unzip_file('./tx_position.zip', './')
-    print('done')
-
+    print('Unzip completed.')
 
 if __name__ == "__main__":
     main()
